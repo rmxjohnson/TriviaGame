@@ -1,0 +1,121 @@
+/* CSS for Homework Assignment 5
+   jQuery - Trivia Game
+   Rhonda Johnson */
+
+
+/* * {
+    overflow: auto;
+}*/
+
+html, body { 
+    margin: 0; 
+    padding: 0;     
+    background-image: url("../images/turquoise.jpg");
+    height: 90%;
+}
+
+#wrapper {
+	width: 100%;
+	max-width:960px;
+    margin: 0 auto;
+    height: 100%;
+  
+    
+}
+
+#firtChoice,
+#secondChoice,
+#thirdChoice,
+#fourthChoice{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+#gameTitle{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.hoverItem:hover {
+    background: #3374C2;
+}
+
+#instructionCard{
+   margin-left: 5%;
+   margin-right: 5%;
+}
+
+#targetNumber{
+    margin-top: 20px;
+}
+
+#gameTitle{   
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.purple{
+    color: purple;
+}
+
+.center{
+    text-align: center;
+}
+
+.mainColor{
+    color: red;
+}
+#mainContainer{
+    width: 90%;
+    height: 90vh;
+    border: 3px solid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    background-color: pink;
+   
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+p{
+    margin: 0;
+    font-weight: 600;
+}
+
+#instructionLabel{
+    margin-bottom: 0;
+}
+
+.card-title{
+    margin-bottom: 2px;
+}
+.card-body{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+img{
+    height: 75px;
+}
+
+
+/* media queries */
+@media screen and (max-width:768px){
+    #wrapper {
+        max-width: 768px;
+     }
+}
+
+
+@media screen and (max-width:640px){
+    #wrapper {
+         max-width: 640px;
+    }
+}

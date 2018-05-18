@@ -1,0 +1,115 @@
+<!--Main Index page - Assignment 4
+    jQuery - Crystal Collector
+    Rhonda Johnson -->
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Crystal Collector</title>
+    <!--<link rel="stylesheet" href="assets/css/reset.css">-->
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- jQuery CDN -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Custom Javascript - at the bottom of the body-->
+    <!--<script src="assets/javascript/game.js"></script>-->
+
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <!-- main container -->
+        <div id="mainContainer" class="container">
+
+            <div class="row">
+                <div class="col-12">
+                    <h1 id="gameTitle" class="center purple">Trivia Game</h1>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-12 center">
+                    <button id="startButton" type="button" class="btn btn-primary">START</button>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-12">
+                    <h2 id="timerRow" class="center">
+                        <span id="timerDisplay">Press Start to Begin</span>
+                        <span id="showTimer"></span>
+                    </h2>
+                </div>
+            </div>
+
+            <!-- area to display question and messages to player -->
+            <div class="row">
+                <div class="col-12 center">
+                    <h3 id="currentMessage">You have 10 seconds to answer each question</h3>
+                    <h3 id="extraMessage">Extra Message</h3>
+                    <!--<h3>This will be my current question</h3>-->
+                </div>
+            </div>
+
+            <hr id="line">
+            <section id="answerSection">
+                <div class="row answers">
+                    <div class="col-12 center">
+                        <h4 id="firstChoice" class="hoverItem"></h4>
+                        <!--<h4>Answer first choice</h4>-->
+                    </div>
+                </div>
+
+                <div class="row answers">
+                    <div class="col-12 center">
+                        <h4 id="secondChoice" class="hoverItem"></h4>
+                        <!--<h4>Answer second choice</h4>-->
+                    </div>
+                </div>
+
+
+                <div class="row answers">
+                    <div class="col-12 center">
+                        <h4 id="thirdChoice" class="hoverItem"></h4>
+                        <!--<h4>Answer third choice</h4>-->
+                    </div>
+                </div>
+
+
+                <div class="row answers">
+                    <div class="col-12 center">
+                        <h4 id="fourthChoice" class="hoverItem"></h4>
+                        <!--<h4>Answer fourth choice</h4>-->
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <!-- Custom Javascript -->
+    <script src="assets/javascript/app.js"></script>
+
+</body>
+
+</html>
