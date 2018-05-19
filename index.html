@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Crystal Collector</title>
+    <title>Trivia Game</title>
     <!--<link rel="stylesheet" href="assets/css/reset.css">-->
 
     <!-- Bootstrap CDN -->
@@ -34,7 +34,7 @@
 
             <div class="row">
                 <div class="col-12">
-                    <h1 id="gameTitle" class="center purple">Trivia Game</h1>
+                    <h2 id="gameTitle" class="center purple">Totally 80's Trivia</h2>
                 </div>
             </div>
 
@@ -48,55 +48,62 @@
 
             <div class="row">
                 <div class="col-12">
-                    <h2 id="timerRow" class="center">
+                    <h3 id="timerRow" class="center">
                         <span id="timerDisplay">Press Start to Begin</span>
                         <span id="showTimer"></span>
-                    </h2>
+                    </h3>
                 </div>
             </div>
 
             <!-- area to display question and messages to player -->
             <div class="row">
                 <div class="col-12 center">
-                    <h3 id="currentMessage">You have 10 seconds to answer each question</h3>
-                    <h3 id="extraMessage">Extra Message</h3>
+                    <h4 id="currentMessage">You have 10 seconds to answer each question</h4>
+                    <h4 id="extraMessage">Extra Message</h4>
                     <!--<h3>This will be my current question</h3>-->
                 </div>
             </div>
 
             <hr id="line">
-            <section id="answerSection">
+            <section id="answerSection" class="hideItem">
                 <div class="row answers">
-                    <div class="col-12 center">
-                        <h4 id="firstChoice" class="hoverItem"></h4>
+                    <div class="col-6 center">
+                        <h5 id="firstChoice" class="hoverItem" value="1">Placeholder</h5>
                         <!--<h4>Answer first choice</h4>-->
                     </div>
-                </div>
+                <!--</div>
 
-                <div class="row answers">
-                    <div class="col-12 center">
-                        <h4 id="secondChoice" class="hoverItem"></h4>
+                <div class="row answers">-->
+                    <div class="col-6 center">
+                        <h5 id="secondChoice" class="hoverItem" value="2">Placeholder</h5>
                         <!--<h4>Answer second choice</h4>-->
                     </div>
                 </div>
 
+                <br>
 
                 <div class="row answers">
-                    <div class="col-12 center">
-                        <h4 id="thirdChoice" class="hoverItem"></h4>
+                    <div class="col-6 center">
+                        <h5 id="thirdChoice" class="hoverItem" value="3">Placeholder</h5>
                         <!--<h4>Answer third choice</h4>-->
                     </div>
-                </div>
+                <!--</div>
 
 
-                <div class="row answers">
-                    <div class="col-12 center">
-                        <h4 id="fourthChoice" class="hoverItem"></h4>
+                <div class="row answers">-->
+                    <div class="col-6 center">
+                        <h5 id="fourthChoice" class="hoverItem" value="4">Placeholder</h5>
                         <!--<h4>Answer fourth choice</h4>-->
                     </div>
                 </div>
             </section>
 
+
+
+            <div class="row" id="imageContainer">
+                <!--<img id="currentImage" src="assets/images/ItalianPasta.jpg" alt="ItalianFood">-->
+                <img id="currentImage" src="assets/images/MaxHeadroom.jpg" alt="Current Image">
+            </div>
 
 
 
