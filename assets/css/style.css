@@ -10,8 +10,43 @@
 html, body { 
     margin: 0; 
     padding: 0;     
-    background-image: url("../images/turquoise.jpg");
+    background-image: url("../images/rubiksCube.jpg");
     height: 90%;
+}
+
+h1, h2, h3, h4{
+    font-family: "Comic Sans MS", cursive, sans-serif;	
+    font-weight: 800;
+}
+
+h1{
+    font-weight: 800;
+}
+
+.hideItem{
+    visibility: hidden;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.hoverItem:hover {
+    background: #d0dbdd;
+    cursor: pointer;
+}
+
+.headerColor{
+    /*color: rgb(28, 176, 187);*/
+    color: purple;
+}
+
+.red{
+    color: #f52a2aec;
+}
+
+.center{
+    text-align: center;
 }
 
 #wrapper {
@@ -21,8 +56,9 @@ html, body {
     height: 100%;    
 }
 
-.hideItem{
-    visibility: hidden;
+#gameTitle{
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #firtChoice,
@@ -33,21 +69,8 @@ html, body {
     margin-right: auto;
 }
 
-.underline {
-    text-decoration: underline;
-}
-
-#gameTitle{
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-.hoverItem:hover {
-    background: #3374C2;
-}
-
-#imageContainter{
-    margin-bottom: 500px;
+#imageContainer{
+    margin-bottom: 20px;
 }
 
 #currentImage{
@@ -58,67 +81,15 @@ html, body {
     z-index: 99;
 }
 
-#instructionCard{
-   margin-left: 5%;
-   margin-right: 5%;
-}
-
-#targetNumber{
-    margin-top: 20px;
-}
-
-#gameTitle{   
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.purple{
-    color: purple;
-}
-
-.center{
-    text-align: center;
-}
-
-.mainColor{
-    color: red;
-}
 #mainContainer{
     width: 90%;
-    height: 95vh;
     border: 3px solid;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: auto;
-    background-color: pink;
-   
+    background-image: url("../images/swirl2Background.jpg");
+   /* background-color: pink;*/   
 }
-
-.underline{
-    text-decoration: underline;
-}
-
-p{
-    margin: 0;
-    font-weight: 600;
-}
-
-#instructionLabel{
-    margin-bottom: 0;
-}
-
-.card-title{
-    margin-bottom: 2px;
-}
-.card-body{
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-img{
-    height: 75px;
-}
-
 
 /* media queries */
 @media screen and (max-width:768px){

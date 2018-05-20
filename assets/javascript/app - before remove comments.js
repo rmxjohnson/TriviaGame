@@ -8,7 +8,7 @@ $(document).ready(function () {
     // enable the "checkAnswer" to run
     var enabled = true;
 
-    // array of trivia questions
+    // arry of trivia questions
     var questions = [
         'On November 17, 1981, approximately 30 million Americans turned on their televisions to watch which couple get married?',
         'Which of these is not the nickname of one of the ghosts featured in the Pac-Man video game?',
@@ -50,7 +50,7 @@ $(document).ready(function () {
     var correctCount = 0;                       // # of correct answers
     var incorrectCount = 0;                     // # of incorrect answers
     var unansweredCount = 0;                    // # of unanswered questions
-    var maxTime = 10;                           // # of seconds the player has to answer the question
+    var maxTime = 8;                            // # of seconds the player has to answer the question
     var delayTime = 5000                        // 5000 milliseconds = 5 seconds
     var timeLeft;                               // seconds left on the imter
     var timerInterval;                          // interval for the timer
@@ -70,69 +70,68 @@ $(document).ready(function () {
     var answerSection = $("#answerSection");
     var imageContainer = $("#imageContainer");
     var currentImage = $("#currentImage");
+    
 
 
 
 
-    // Execute when game is done
     var gameOver = function () {
-        // disable running checkAnswer function on-click
         enabled = false;
+        console.log("questionCounter : " + questionCounter);
+        console.log("correctCount: " + correctCount);
+        console.log("incorrectCount: " + incorrectCount);
+        console.log("unansweredCount: " + unansweredCount);
 
-        // display start button
         startButton.css("visibility", "visible");
 
-        // reset counters for a new game
-        questionCounter = 0;
-        correctCount = 0;
-        incorrectCount = 0;
-        unansweredCount = 0;
-
-        // display game stats
         firstChoice.text("***    Thanks for Playing    ***");
         secondChoice.text("Correct Answers: " + correctCount);
         thirdChoice.text("Incorrect Answers: " + incorrectCount);
         fourthChoice.text("Unanswered Questions: " + unansweredCount);
         currentImage.attr("src", imageArray[(imageArray.length) - 1]);
         imageContainer.removeClass("hideItem");
+
+        questionCounter = 0;
+        correctCount = 0;
+        incorrectCount = 0;
+        unansweredCount = 0;
         startButton.text("Restart");
         timerDisplay.empty();
         showTimer.empty();
         currentMessage.empty();
         extraMessage.css("visibility", "visible");
         extraMessage.text("GAME OVER - Press Restart to Play Again");
+
+
+
     }
-
-    // execute when need a new question
     var newQuestion = function () {
-        // enable on-click to run checkAnswer function
+        //answerSection.on("click", "h4", checkAnswer);
         enabled = true;
-
-        // set variables
-        timeLeft = maxTime;
-        var i = questionCounter;
-
-        // allow questions to display
+        console.log("inside new question function enable = " + enabled);
+        //answerSection.css("visible", "visible");
         answerSection.removeClass("hideItem");
-
-        // hide start button and image
         imageContainer.addClass("hideItem");
         startButton.css("visibility", "hidden");
-
-        // display timer area
+        //timerRow.css("visibility", "visible");
+        // answerSection.prop("disabled", false);
+        timeLeft = maxTime;
+        var i = questionCounter;
         timerDisplay.text("Timer: ");
         showTimer.text(timeLeft);
+        //answerSection.attr("disabled", false);
+        //answerSection.prop("disabled", false);
 
-        // Game Over when used all questions
+
         if (questionCounter == questions.length) {
+            //alert("Game OVer");
             gameOver();
-
+            //questionCounter = 0;
+            //startButton.text("Restart");
         }
         else {
-            // begin the timer
+            //startButton.hide();
             beginTimer();
-
-            // display question and choices
             currentMessage.text(questions[i]);
             extraMessage.text("placeholder");
             extraMessage.css("visibility", "hidden");
@@ -140,57 +139,28 @@ $(document).ready(function () {
             secondChoice.text(answerTwo[i]);
             thirdChoice.text(answerThree[i]);
             fourthChoice.text(answerFour[i]);
+
+            //extraMessage.empty();
+            //alert("before begin timer");
+
+            //alert("after begin timer");
+
+
+            //questionCounter++;
         }
     }
 
-    // begin the timer
     function beginTimer() {
+        //needed to add the next line 
+        //alert("inside begin timer");
         clearInterval(timerInterval);
         timerInterval = setInterval(decrement, 1000);
-    }
-
-    // execute when no time left
-    function outOfTime() {
-        extraMessage.text("OOPS! You Ran Out of Time!");
-        extraMessage.css("visibility", "visible");
-
-        displayCorrectAnswer();
-
-        // add 1 to count of unanswered questions
-        unansweredCount++;
-
-        // increment the question counter
-        questionCounter++;
-
-        // stop the timer 
-        stopTimer();
-
-        // after 5 seconds, display a new question
-        setTimeout(newQuestion, delayTime);
-    }
-
-    // timer counts down by 1 second
-    function decrement() {
-        showTimer.text(timeLeft);
-
-        // check if player out of time
-        if (timeLeft === 0) {
-            outOfTime();
-        }
-        timeLeft--;
-    }
-
-    // stop the timer
-    function stopTimer() {
-        clearInterval(timerInterval);
     }
 
     function displayCorrectAnswer() {
         // Display the answer's image
         currentImage.attr("src", imageArray[questionCounter]);
         imageContainer.removeClass("hideItem");
-
-        // find which answer is correct and display the correct answer
         var temp = correctAnswer[questionCounter];
 
         if (temp == 1) {
@@ -206,67 +176,142 @@ $(document).ready(function () {
             firstChoice.text(answerFour[questionCounter]);
         }
         else {
-            firstChoice.text("Error Handler - Programmed incorrectly");
+            firstChoice.text("I'm screwed");
         }
-
-        // clear other text
         secondChoice.empty();
         thirdChoice.empty();
         fourthChoice.empty();
+
     }
 
-    // on-click, check if player selected the correct answer
+    function outOfTime() {
+        extraMessage.text("OOPS! You Ran Out of Time!");
+        extraMessage.css("visibility", "visible");
+
+        displayCorrectAnswer();
+
+        // Display the answer's image
+        // currentImage.attr("src", imageArray[questionCounter]);
+        // imageContainer.removeClass("hideItem");
+
+        // add 1 to count of unanswered questions
+        unansweredCount++;
+        stopTimer();
+
+        // increment the question counter
+        questionCounter++;
+
+        // after 5 seconds, display a new question
+        alert("before new question enabled = " + enabled);
+        setTimeout(newQuestion, delayTime);
+
+    }
+
+    function decrement() {
+        showTimer.text(timeLeft);
+
+        //$("#show-number").html("<h2>" + timeLeft + "</h2>");
+
+
+        if (timeLeft === 0) {
+            //alert("Times Up!");
+            outOfTime();
+        }
+        timeLeft--;
+    }
+
+    function stopTimer() {
+
+        clearInterval(timerInterval);
+    }
+
+
     function checkAnswer() {
 
-        // if on-click is permitted, check if player selected the correct answer
+        // alert("inside checkanswer  enabled = " + enabled);
         if (enabled) {
 
             // disable the checkAnswer function from running until a new question is generated
             enabled = false;
 
-            // answer chosen by the player
             var playerPick = $(this).attr("value");
+            //answerSection.off('click');
+            //timerRow.css("visibility", "hidden");   
+            //Display the answer's image   
+            //imageContainer.empty();  
 
             // stop the timer
             stopTimer();
 
-            // display the correct answer and image
-            displayCorrectAnswer();
 
-            // player chose correct answer
+
+            // set the correct image to display
+            displayCorrectAnswer();
+            // currentImage.attr("src", imageArray[questionCounter]);
+            // imageContainer.removeClass("hideItem");
+
+
+            console.log(this);
+            //answerSection.prop("disabled", true);
+            //alert("Answer # selected = " + playerPick + "\nquestionCounter = " + questionCounter +
+            //  "\ncorrectAnswerNUmber = " + correctAnswer[questionCounter]);
+
             if (playerPick == correctAnswer[questionCounter]) {
-                // display message to the player
+                //alert("you picked the right answer. YIPPEE!!!!");
                 extraMessage.text("***  FANTABULOUS - You Got This!!!  ***");
                 extraMessage.css("visibility", "visible");
 
                 // add 1 to # of correct answer count
                 correctCount++;
+
+                // // stop the timer
+                // stopTimer();
+
+                // // after 3 seconds, display a new question
+                // setTimeout(newQuestion, 3000);
+
             }
-
-            // player chose incorrect answer
             else {
-                // display message to the player
-                extraMessage.text("***  WRONG Answer - Too Bad! Too Sad!  ***");
+                // alert("Booooooo, you picked the wrong answer");
+                extraMessage.text("***  WRONG Answer  Too Bad! Too Sad!  ***");
                 extraMessage.css("visibility", "visible");
-
                 // add 1 to # of incorrect answer count
                 incorrectCount++;
+
+                // // stop the timer
+                // stopTimer();
+
+                // // after 5 seconds, display a new question
+                // setTimeout(newQuestion, 5000);
+
             }
+
+
+
+            //alert("I am in the checkanswer function");
+            //answerSection.attr("disabled", true);
+            //answerSection.prop("disabled", false);
+
+
+            // answerSection.off("click");
 
             // increment questionCounter
             questionCounter++;
 
             // after 5 seconds, display a new question
+            // alert("before new question enabled = " + enabled);
+
             setTimeout(newQuestion, delayTime);
 
         }
 
     };
 
-    //*********************************
-    //    Begin new game when player clicks Start/Restart button
+    //answerSection.css("visible", "hidden");
+    // alert("before start question enabled = " + enabled);
     startButton.click(newQuestion);
-
-    // when player clicks on selection, check the answer
     answerSection.on("click", "h4", checkAnswer);
+
+
+
 })

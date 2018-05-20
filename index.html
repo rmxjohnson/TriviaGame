@@ -1,5 +1,5 @@
-<!--Main Index page - Assignment 4
-    jQuery - Crystal Collector
+<!--Main Index page - Assignment 5
+    jQuery - Trivia Game
     Rhonda Johnson -->
 
 <!DOCTYPE html>
@@ -32,20 +32,21 @@
         <!-- main container -->
         <div id="mainContainer" class="container">
 
+            <!-- Game Header -->
             <div class="row">
                 <div class="col-12">
-                    <h2 id="gameTitle" class="center purple">Totally 80's Trivia</h2>
+                    <h1 id="gameTitle" class="center headerColor">Totally 80's Trivia</h1>
                 </div>
             </div>
 
-
+            <!-- Start / Restart Button -->
             <div class="row">
                 <div class="col-12 center">
                     <button id="startButton" type="button" class="btn btn-primary">START</button>
                 </div>
             </div>
 
-
+            <!-- Start Message -->
             <div class="row">
                 <div class="col-12">
                     <h3 id="timerRow" class="center">
@@ -55,61 +56,49 @@
                 </div>
             </div>
 
-            <!-- area to display question and messages to player -->
+            <!-- Area to display question and messages to player -->
             <div class="row">
                 <div class="col-12 center">
                     <h4 id="currentMessage">You have 10 seconds to answer each question</h4>
-                    <h4 id="extraMessage">Extra Message</h4>
-                    <!--<h3>This will be my current question</h3>-->
+                    <h4 id="extraMessage" class="hideItem red">Extra Message</h4>
                 </div>
             </div>
 
-            <hr id="line">
+            <!--<hr id="line">-->
+
+            <!-- Area to hold answers -->
             <section id="answerSection" class="hideItem">
                 <div class="row answers">
-                    <div class="col-6 center">
-                        <h5 id="firstChoice" class="hoverItem" value="1">Placeholder</h5>
-                        <!--<h4>Answer first choice</h4>-->
-                    </div>
-                <!--</div>
-
-                <div class="row answers">-->
-                    <div class="col-6 center">
-                        <h5 id="secondChoice" class="hoverItem" value="2">Placeholder</h5>
-                        <!--<h4>Answer second choice</h4>-->
+                    <div class="col-12 center">
+                        <h4 id="firstChoice" class="hoverItem" value="1">Placeholder</h4>
                     </div>
                 </div>
 
-                <br>
+                <div class="row answers">
+                    <div class="col-12 center">
+                        <h4 id="secondChoice" class="hoverItem" value="2">Placeholder</h4>
+                    </div>
+                </div>
 
                 <div class="row answers">
-                    <div class="col-6 center">
-                        <h5 id="thirdChoice" class="hoverItem" value="3">Placeholder</h5>
-                        <!--<h4>Answer third choice</h4>-->
+                    <div class="col-12 center">
+                        <h4 id="thirdChoice" class="hoverItem" value="3">Placeholder</h4>
                     </div>
-                <!--</div>
+                </div>
 
 
-                <div class="row answers">-->
-                    <div class="col-6 center">
-                        <h5 id="fourthChoice" class="hoverItem" value="4">Placeholder</h5>
-                        <!--<h4>Answer fourth choice</h4>-->
+                <div class="row answers">
+                    <div class="col-12 center">
+                        <h4 id="fourthChoice" class="hoverItem" value="4">Placeholder</h4>
                     </div>
                 </div>
             </section>
 
 
-
+            <!-- Area for Images -->
             <div class="row" id="imageContainer">
-                <!--<img id="currentImage" src="assets/images/ItalianPasta.jpg" alt="ItalianFood">-->
                 <img id="currentImage" src="assets/images/MaxHeadroom.jpg" alt="Current Image">
             </div>
-
-
-
-
-
-
 
         </div>
     </div>
