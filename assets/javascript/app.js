@@ -71,7 +71,7 @@ $(document).ready(function () {
     var incorrectCount = 0;                     // # of incorrect answers
     var unansweredCount = 0;                    // # of unanswered questions
     var maxTime = 10;                           // # of seconds the player has to answer the question
-    var delayTime = 4000                        // 4000 milliseconds = 4 seconds
+    var delayTime = 4000                        // 4000 milliseconds = 4 seconds between questions
     var timeLeft;                               // seconds left on the imter
     var timerInterval;                          // interval for the timer
 
